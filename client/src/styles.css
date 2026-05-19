@@ -1,0 +1,215 @@
+:root {
+  --bg: #f7f9fe;
+  --surface: #ffffff;
+  --border: #dfe3ea;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --brand: #2563eb;
+  --success: #16a34a;
+  --error: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.app-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.auth-view,
+.dashboard-view,
+.project-view {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.auth-view h1,
+.dashboard-view h2,
+.project-view h2,
+.project-view h1 {
+  margin-top: 0;
+}
+
+.auth-view form,
+.summary-card form,
+.new-task-panel form,
+.member-panel form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  color: white;
+  background: var(--brand);
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+.error {
+  color: var(--error);
+}
+
+.success {
+  color: var(--success);
+}
+
+.dashboard-grid,
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.dashboard-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-list {
+  margin-top: 2rem;
+}
+
+.project-card {
+  display: block;
+  padding: 1.3rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  border-color: var(--brand);
+}
+
+.project-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.project-header a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.project-grid {
+  grid-template-columns: 1.6fr 1fr;
+}
+
+.task-panel,
+.new-task-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  background: #fafbff;
+}
+
+.task-actions button {
+  margin-left: 0.5rem;
+}
+
+.project-grid {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.member-panel {
+  margin-top: 1.5rem;
+}
+
+.member-panel ul {
+  padding-left: 1rem;
+}
+
+.overdue-card {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-content {
+    padding: 1rem;
+  }
+}
